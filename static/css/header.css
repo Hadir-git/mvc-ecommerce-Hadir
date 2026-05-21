@@ -1,0 +1,62 @@
+:root {
+  --nav-bg: #000000;
+  --nav-text: #ffffff;
+  --nav-shadow: #ffffff;
+  --nav-btn-bg: #000000;
+}
+
+#search-bar.page_underline,
+#search-bar.search.page_underline {
+  background-color: var(--nav-bg) !important;
+  color: var(--nav-text) !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+a.manage_profile.page_underline,
+a.search.page_underline,
+a.cart.page_underline {
+  color: var(--nav-text) !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+
+#search-bar .btn,
+#search-bar .btn.page_underline {
+  background-color: var(--nav-btn-bg) !important;
+  color: var(--nav-text) !important;
+  box-shadow: none !important;
+}
+
+a.manage_profile {
+  color: var(--nav-text) !important;
+}
+
+a.manage_profile.page_underline {
+  color: var(--nav-text) !important;
+  background-color: transparent !important;
+}
+
+a.cart {
+  color: var(--nav-text) !important;
+}
+
+a.cart.page_underline {
+  color: var(--nav-text) !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Admin Panel — même style fixe que Cart */
+a.admin {
+  color: var(--nav-text) !important;
+}
+
+a.admin.page_underline {
+  color: var(--nav-text) !important;
+  background-color: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}

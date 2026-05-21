@@ -1,0 +1,161 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0a0a0a;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+/* ── Page ── */
+.page {
+  width: 100%;
+  max-width: 560px;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F4A7C3, #E05FA0);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 500; color: #fff;
+  flex-shrink: 0; letter-spacing: .5px;
+}
+
+.header-text h2 { font-size: 18px; font-weight: 500; color: #F4A7C3; }
+.header-text p  { font-size: 13px; color: #9A7088; margin-top: 2px; }
+
+/* ── Card ── */
+.card {
+  background: #1a0d14;
+  border: 0.5px solid #5A2540;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Corner ornaments ── */
+.corner-tr,
+.corner-bl {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.corner-tr::before,
+.corner-bl::before {
+  content: '';
+  position: absolute;
+  width: 14px; height: 14px;
+  border-color: #C06090;
+  border-style: solid;
+  opacity: .45;
+}
+.corner-tr::before { top: 7px;    right: 7px;  border-width: 1px 1px 0 0; }
+.corner-bl::before { bottom: 7px; left: 7px;   border-width: 0 0 1px 1px; }
+
+/* ── Card top ── */
+.card-top {
+  padding: 1.25rem 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 0.5px solid #4A1E35;
+  background: #200F1A;
+}
+.card-top span { font-size: 14px; font-weight: 500; color: #E8A0C0; }
+
+/* ── Edit button ── */
+.edit-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: 8px;
+  border: 0.5px solid #7A3558; background: transparent;
+  cursor: pointer; font-size: 13px; color: #C08098;
+  transition: background 0.15s, color 0.15s;
+}
+.edit-btn:hover  { background: #2E1020; color: #F4A7C3; }
+.edit-btn.active { background: #3A1828; color: #F4A7C3; border-color: #C06090; }
+
+/* ── Card body ── */
+.card-body { padding: 1.75rem 1.5rem 1.5rem; }
+
+/* ── Section label ── */
+.section-label {
+  font-size: 11px; font-weight: 500; color: #7A4560;
+  text-transform: uppercase; letter-spacing: .07em;
+  margin-bottom: 1rem;
+}
+
+/* ── Fields ── */
+.field { margin-bottom: 1.25rem; }
+
+.field label {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 12px; font-weight: 500; color: #B07090;
+  text-transform: uppercase; letter-spacing: .05em;
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%; padding: 9px 12px; border-radius: 8px;
+  border: 0.5px solid #5A2A42; background: #261020;
+  color: #ffffff; font-size: 14px;
+  transition: border 0.15s, background 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+.field input::placeholder { color: #7A4560; }
+.field input:disabled     { opacity: .6; cursor: not-allowed; background: #1E0D18; color: #ffffff; }
+.field input:not(:disabled):hover { border-color: #A05878; background: #2E1424; }
+.field input:not(:disabled):focus {
+  border-color: #E87FB0;
+  background: #2A1020;
+  box-shadow: 0 0 0 3px rgba(232,127,176,.15);
+}
+
+.hint { font-size: 11px; color: #7A4560; margin-top: 4px; }
+
+/* ── Divider ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin: 1.25rem 0;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1; height: 0.5px;
+  background: #3A1A2C;
+}
+.divider::before { background: linear-gradient(90deg, transparent, #3A1A2C); }
+.divider::after  { background: linear-gradient(90deg, #3A1A2C, transparent); }
+
+/* ── Password row ── */
+.pw-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 480px) { .pw-row { grid-template-columns: 1fr; } }
+
+/* ── Submit button ── */
+.submit-btn {
+  width: 100%; padding: 10px; border-radius: 8px; border: none;
+  background: linear-gradient(90deg, #C8446A, #E87FB0);
+  color: #fff; font-size: 14px; font-weight: 500; cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-top: .5rem;
+}
+.submit-btn:disabled              { opacity: .3; cursor: not-allowed; }
+.submit-btn:not(:disabled):hover  { opacity: .85; }
+.submit-btn:not(:disabled):active { transform: scale(0.98); }
+
+/* ── Messages ── */
+.msg { font-size: 13px; margin-bottom: 1rem; text-align: center; min-height: 18px; }
+.success { color: #80C898; }
+.error   { color: #E87878; }
